@@ -24,15 +24,15 @@ jobs:
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::726188179833:role/CodeGuruSecurityGitHubAccessRole
-          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::814129995367:role/CodeGuruSecurityGitHubAccessRole
+          aws-region: eu-central-1
           role-session-name: GitHubActionScript
 
       - name: CodeGuru Security
         uses: aws-actions/codeguru-security@v1
         with:
           source_path: .
-          aws_region: us-east-1
+          aws_region: eu-central-1
           fail_on_severity: Critical
       - name: Print findings
         run: |
