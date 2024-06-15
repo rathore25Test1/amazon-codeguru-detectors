@@ -13,22 +13,20 @@ permissions:
   contents: read
   
 jobs:
-  find_changed_lines:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Find changed lines
-        id: changed_lines
-        uses: hestonhoffman/changed-lines@v1
-      - name: Print changed lines
-        run: echo ${{ steps.changed_lines.outputs.changed_lines }}
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Respository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          
+      - name: Find changed lines
+        id: changed_lines
+        uses: hestonhoffman/changed-lines@v1
+        
+      - name: Print changed lines
+        run: echo ${{ steps.changed_lines.outputs.changed_lines }}
 
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
