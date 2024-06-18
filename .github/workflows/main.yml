@@ -31,11 +31,11 @@ jobs:
       - name: Get Git diff
         id: get_git_diff
         run: |
-          mkdir cgs-diff-folder
-          git diff origin/main origin/${GITHUB_HEAD_REF} > cgs-diff-folder/cgs-git-diff.diff
+          mkdir qsa-diff-folder
+          git diff origin/main origin/${GITHUB_HEAD_REF} > qsa-diff-folder/qsa-git-diff.diff
 
       - name: Print diff
-        run: cat cgs-diff-folder/cgs-git-diff.diff
+        run: cat qsa-diff-folder/qsa-git-diff.diff
 
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
