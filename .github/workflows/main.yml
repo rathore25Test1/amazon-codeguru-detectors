@@ -32,6 +32,9 @@ jobs:
         id: get_git_diff
         run: git diff
 
+      - name: Print diff
+        run: echo ${{ steps.get_git_diff.outputs }}
+
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
