@@ -33,9 +33,7 @@ jobs:
         run: git diff > cgs-git-diff.diff
 
       - name: Print diff
-        run: |
-          ls -l
-          cat cgs-git-diff.diff
+        run: cat cgs-git-diff.diff
 
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
