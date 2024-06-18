@@ -28,6 +28,10 @@ jobs:
       - name: Print changed lines
         run: echo ${{ steps.changed_lines.outputs.changed_lines }}
 
+      - name: Get Git diff
+        id: get_git_diff
+        run: git diff
+
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
