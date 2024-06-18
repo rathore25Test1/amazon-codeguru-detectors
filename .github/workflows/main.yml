@@ -30,7 +30,7 @@ jobs:
 
       - name: Get Git diff
         id: get_git_diff
-        run: git diff --name-only origin/main origin/${GITHUB_HEAD_REF} > cgs-git-diff.diff
+        run: git diff origin/main origin/${GITHUB_HEAD_REF} > cgs-git-diff.diff
 
       - name: Print diff
         run: cat cgs-git-diff.diff
