@@ -32,7 +32,7 @@ jobs:
         id: get_git_diff
         run: |
           mkdir qsa-diff-folder
-          git diff origin/main origin/${GITHUB_HEAD_REF} > qsa-diff-folder/qsa-git-diff.diff
+          git diff origin/${GITHUB_BASE_REF} origin/${GITHUB_HEAD_REF} > qsa-diff-folder/qsa-git-diff.diff
 
       - name: Print diff
         run: cat qsa-diff-folder/qsa-git-diff.diff
