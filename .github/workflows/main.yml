@@ -38,7 +38,11 @@ jobs:
         run: cat qsa-diff-folder/qsa-git-diff.diff
 
       - name: Print root content
-        run: ls -la
+        run: |
+          echo "Root content"
+          ls -la
+          echo ".git content"
+          ls -la .git
 
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
