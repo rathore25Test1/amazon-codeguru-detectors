@@ -15,16 +15,16 @@ func bindToAllInterfacesNoncompliant() {
         return
     }
 
-    for {
-        conn, err := tel.Accept()
-        if err != nil {
-            break
-        }
-        go func(c net.Conn) {
-            io.Copy(c, c)
-            c.Close()
-        }(conn)
-    }
+	    for {
+	        conn, err := tel.Accept()
+	        if err != nil {
+	            break
+	        }
+	        go func(c net.Conn) {
+	            io.Copy(c, c)
+	            c.Close()
+	        }(conn)
+	    }
 }
 // {/fact}
 
