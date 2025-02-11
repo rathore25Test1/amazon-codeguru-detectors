@@ -15,14 +15,14 @@ public class AmazonS3TransferManagerShutdown {
     // {fact rule=amazon-s3-transfer-manager-shutdown@v1.0 defects=1}
     public void transferManagerNoncompliant(PutObjectRequest putRequest) {
         // Noncompliant: transferManager is not shutdown.
-        TransferManager transferManager = TransferManagerBuilder.defaultTransferManager();
-        try {
-            final Upload upload = transferManager.upload(putRequest);
-            upload.waitForCompletion();
-        }
-        catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+            TransferManager transferManager = TransferManagerBuilder.defaultTransferManager();
+            try {
+                final Upload upload = transferManager.upload(putRequest);
+                upload.waitForCompletion();
+            }
+            catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
     }
     // {/fact}
 
